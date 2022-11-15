@@ -7,6 +7,7 @@ function App() {
   return (
     <div>
       <LandingPage/>
+      <h1>Change Hua?</h1>
     </div>
   );
 }
