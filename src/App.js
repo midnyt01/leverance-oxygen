@@ -1,12 +1,13 @@
 import LandingPage from './routes/landing-page/landing-page.component';
 
-import logo from './logo.svg';
 import './App.css';
+import UserProfile from './routes/user-profile/user-profile.component';
 
 function App() {
   return (
     <div>
-      <LandingPage/>
+      {/* <LandingPage/> */}
+      <UserProfile />
     </div>
   );
 }
