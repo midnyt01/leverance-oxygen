@@ -12,6 +12,7 @@ import info from '../../assets/circle-info-solid.svg'
 
 
 import './user-profile.styles.css'
+import { Link } from 'react-router-dom'
 
 const UserProfile = () => {
     return (
@@ -19,7 +20,9 @@ const UserProfile = () => {
             {/* User profile container   */}
             <div className="profile-container">
                 <div className="text-container">
-                    <img alt="back-arrow" className='back-arrow' src={backArrow} />
+                    <Link to='/'>
+                        <img alt="back-arrow" className='back-arrow' src={backArrow} />
+                    </Link>
                     <h3 className='client-name'>Shivam</h3>
                     <span className='view-activity'>View activity
                         <img alt='activity-arrow' src={activityArrow} style={{height: '12px'}}/>

@@ -1,7 +1,9 @@
-import './topbar.styles.css'
+import { Link } from 'react-router-dom';
 
 import user from '../../assets/user-regular.svg'
 import location from '../../assets/location-dot-solid.svg'
+
+import './topbar.styles.css'
 
 const Topbar = () => {
   return (
@@ -11,9 +13,9 @@ const Topbar = () => {
           <img src={location} alt='location' style={{width: '25px', height: '25px'}} />
           <span className='my-location'>My location</span>
         </div>
-        <div className="user">
+        <Link to='/user-profile' className="user">
           <img src={user} alt='user' style={{width: '25px', height: '25px'}}/>
-        </div>
+        </Link>
       </div>
     </div>
   );

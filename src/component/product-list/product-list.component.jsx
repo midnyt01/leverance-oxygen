@@ -1,6 +1,6 @@
 import './product-list.styles.css'
 
-import cylinder from '../../assets/oxygen-cylinder.jpg'
+import cylinder from '../../assets/oxygen-cylinder.png'
 
 const PorductList = () => {
     return (
