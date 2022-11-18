@@ -1,69 +1,38 @@
-import { Close } from '@material-ui/icons';
-import React, { useState } from 'react'
-import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
-const Container = styled.div`
-    height: 100%;
-    position: fixed;
-    background-color: white;
-    opacity: 1;
-    z-index: 10000;
-    overflow: auto;
-    transition: all 0.4s ease;
-`
-const Wrapper = styled.div`
-  height: 100%;
-  width: 100%;
- 
-`
+import './sidebar.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-const CloseIcon = styled.div`
-padding: 1rem 0rem 0rem 13rem;
-`
 
-const Items = styled.p`
-  font-size: 20px;
-  font-weight: bold;
-  cursor: pointer;
-  text-align: center;
-`
-const Hr = styled.hr`
-  width: 150px;
-    
-`
-
-const Sidebar = ({ NavStyle, ChangeNav }) => {
-
-  const [Scroll, setScroll] = useState(false)
-
-  const ChangeTop =() => {
-    if (window.scrollY >= 20) {
-      setScroll(true) 
-    } else {
-      setScroll(false)
-    }
-  }
-  window.addEventListener('scroll', ChangeTop)
-
+const Sidebar = ({sidebarToggle}) => {
   return (
-    <Container style={{width: NavStyle.width, marginLeft: NavStyle.marginleft}} top={Scroll ? '80px' : '100px'} >
-        <Wrapper>
-         <CloseIcon>
-           <Close style={{fontSize: '30px', fontWeight: '300', cursor: 'pointer' }} onClick={ChangeNav} />
-         </CloseIcon>
-         <Items>Men's</Items>
-         <Hr></Hr>
-         <Items> Women's</Items>
-         <Hr></Hr>
-         <Items>T-Shirts</Items>
-         <Hr></Hr>
-         <Items>About</Items>
-         <Hr></Hr>
-         <Items>Community</Items>
-         <Hr></Hr>
-        </Wrapper>
-    </Container>
-  )
-}
+    <div>
+      <div className='sidenav'>
+        <ul className='slideout'>
+          <span onClick={sidebarToggle} className='sidenav-close f-size-1'>
+            <FontAwesomeIcon icon="fa-solid fa-xmark" />
+          </span>
+          <div className='sidenav-links decoration-none'>
+            <li>
+              <Link href="/" className='decoration-none primary-text'>
+                <span className='mr-2 f-size-1'><FontAwesomeIcon icon="fa-solid fa-house-chimney"/></span>Home
+              </Link>
+            </li>
+            <li>
+              <Link href="/" className='decoration-none primary-text'>
+                <span className='mr-2 f-size-1'><FontAwesomeIcon icon="fa-solid fa-bag-shopping"/></span>Customer Orders
+              </Link>
+            </li>
+            <li>
+              <Link href="/" className='decoration-none primary-text'>
+                <span className='mr-2 f-size-1'><FontAwesomeIcon icon="fa-solid fa-boxes-stacked"/></span>Your Order
+              </Link>
+            </li>
+          </div>
+        </ul>
+      </div>
+    </div>
+  );
+};
 
-export default Sidebar
+export default Sidebar;
