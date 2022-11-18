@@ -1,7 +1,27 @@
+import { useContext, useState } from 'react'
+import { CartContext } from '../../context/cart.context'
+
 import './product-card.styles.css'
 
 
 const ProductCard = ({size, weight}) => {
+
+    const { items, setItems } = useContext(CartContext)
+
+    const [cylinderCount, setCylinderCount] = useState(0)
+
+    const increaseCount = () => {
+        setCylinderCount(cylinderCount + 1)
+        setItems(items + 1)
+    }
+
+    const decreaseCount = () => {
+        if (items > 0 && cylinderCount > 0) {
+            setCylinderCount(cylinderCount - 1)
+            setItems(items - 1)
+        }
+    }
+
     return (
         <div className="w-90 m-auto d-flex jc-space-btw cylinder-container" >
             {/* Cylinder Info container */}
@@ -15,9 +35,9 @@ const ProductCard = ({size, weight}) => {
             <div className="d-flex fd-col jc-center">
                 <img className="cylinder-image-box" />
                 <div className="quantity-toggle">
-                    <div className='quantity-elements'>-</div>
-                    <div className='quantity-elements'>2</div>
-                    <div className='quantity-elements'>+</div>
+                    <div className='quantity-elements' onClick={decreaseCount}>-</div>
+                    <div className='quantity-elements'>{`${cylinderCount}`}</div>
+                    <div className='quantity-elements' onClick={increaseCount}>+</div>
                 </div>
             </div>
         </div>

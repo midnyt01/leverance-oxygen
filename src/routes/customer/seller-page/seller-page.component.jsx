@@ -1,10 +1,17 @@
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import goBack from '../../assets/chevron-left-solid.svg'
-import ProductCard from '../../component/product-card/product-card.component';
+import ProductCard from '../../../component/product-card/product-card.component'
+import { CartContext } from '../../../context/cart.context';
+
+import goBack from '../../../assets/chevron-left-solid.svg'
 
 import './seller-page.styles.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const SellerPage = () => {
+
+    const { items } = useContext(CartContext)
+
     return (
         <div className='w-100 h-100'>
             <Link to='/'>
@@ -23,16 +30,18 @@ const SellerPage = () => {
             </div>
             {/* Products List */}
             <h2 className="secondary-text ml-2">Cylinders</h2>
-            <hr className="secondary-bg w-90 m-auto" />
-            <ProductCard size='Large' weight='50 kg'/>
-            <ProductCard  size='Medium' weight='30 kg' />
-            <hr className="secondary-bg w-90 m-auto" />
+            <div className='mb-max'>
+                <hr className="secondary-bg w-90 m-auto" />
+                <ProductCard size='Large' weight='50 kg'/>
+                <ProductCard  size='Medium' weight='30 kg' />
+                <hr className="secondary-bg w-90 m-auto" />
+            </div>
             {/* Total item selected */}
             <div className='mini-cart-container d-flex jc-space-btw al-item-cen'>
-                <p className='total-items f-size-0' >3 ITEMS</p>
+                <p className='total-items f-size-0' >{`${items} ITEMS`}</p>
                 <div className='view-cart'>
-                    <span>View Cart</span>
-                    <img />
+                    <span className='mr-1'>View Cart</span>
+                    <FontAwesomeIcon icon="fa-solid fa-angles-right" size='sm'/>
                 </div>
             </div>
         </div>

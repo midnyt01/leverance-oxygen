@@ -1,4 +1,5 @@
 import banner from '../../assets/gasesbanner.jpg'
+import SearchBox from '../search-box/search-box.component';
 
 import './banner.styles.css'
 

@@ -1,14 +1,14 @@
-import userImage from '../../assets/user-solid.svg'
-import backArrow from '../../assets/arrow-left-solid.svg'
-import activityArrow from '../../assets/caret-right-solid.svg'
-import bookmark from '../../assets/bookmark-regular.svg'
-import notification from '../../assets/bell-regular.svg'
-import settings from '../../assets/screwdriver-wrench-solid.svg'
-import payments from '../../assets/credit-card-regular.svg'
-import orders from '../../assets/box-open-solid.svg'
-import address from '../../assets/address-book-regular.svg'
-import comment from '../../assets/comment-dots-regular.svg'
-import info from '../../assets/circle-info-solid.svg'
+import userImage from '../../../assets/user-solid.svg'
+import backArrow from '../../../assets/arrow-left-solid.svg'
+import activityArrow from '../../../assets/caret-right-solid.svg'
+import bookmark from '../../../assets/bookmark-regular.svg'
+import notification from '../../../assets/bell-regular.svg'
+import settings from '../../../assets/screwdriver-wrench-solid.svg'
+import payments from '../../../assets/credit-card-regular.svg'
+import orders from '../../../assets/box-open-solid.svg'
+import address from '../../../assets/address-book-regular.svg'
+import comment from '../../../assets/comment-dots-regular.svg'
+import info from '../../../assets/circle-info-solid.svg'
 
 
 import './user-profile.styles.css'
@@ -60,10 +60,10 @@ const UserProfile = () => {
                 <hr className='main-option-horizontal-line' />
                 <p className='other-options-title'>CYLINDER ORDER</p>
                 <div className="other-options-container">
-                    <div className="other-options">
+                    <Link to='/order-history' className="other-options">
                         <img alt='Your Orders' src={orders} className='other-option-icon'/>
                         <p className='other-option-label'>Your Orders</p>
-                    </div>
+                    </Link>
 
                     <div className="other-options">
                         <img alt='Address Book' src={address} className='other-option-icon'/>

@@ -22,4 +22,5 @@
 }
 .quantity-elements {
     padding: 0 6px 0 6px;
+    cursor: pointer;
 }
